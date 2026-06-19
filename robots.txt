@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kennisabawal.github.io/officialapp-hth-com-cn/sitemap.xml
