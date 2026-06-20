@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>极速赛车 · 资料索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f9fafb;
+      color: #1e1e2a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+    .page {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    /* 主视觉 —— 极简留白卡片 */
+    .hero {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.8rem 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.01);
+      transition: box-shadow 0.2s;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0c0e1a;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #5b5f6b;
+      margin-bottom: 1.6rem;
+      border-left: 3px solid #cbd5e0;
+      padding-left: 1rem;
+    }
+    .hero p {
+      color: #2a2d37;
+      margin-bottom: 1rem;
+    }
+    .hero .tagline {
+      font-size: 1rem;
+      background: #f1f3f6;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      color: #2d3748;
+      font-weight: 470;
+      margin-top: 0.3rem;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #edf0f4;
+      transition: border 0.15s;
+    }
+    .card:hover {
+      border-color: #d0d6e0;
+    }
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 570;
+      margin-bottom: 0.9rem;
+      color: #11131e;
+      letter-spacing: -0.01em;
+    }
+    .card p, .card li {
+      font-size: 0.96rem;
+      color: #2c2f3a;
+      margin-bottom: 0.5rem;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card ul li::before {
+      content: "·";
+      color: #87909e;
+      font-weight: 600;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .card ul li {
+      padding-left: 1.2em;
+      margin-bottom: 0.4rem;
+    }
+
+    /* 自然链接段落 */
+    .link-section {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e9edf3;
+    }
+    .link-section h3 {
+      font-size: 1.2rem;
+      font-weight: 530;
+      margin-bottom: 0.9rem;
+      color: #141724;
+    }
+    .link-section p {
+      font-size: 0.96rem;
+      color: #2c2f3c;
+      margin-bottom: 0.8rem;
+    }
+    .link-section a {
+      color: #1f3a6b;
+      text-decoration: none;
+      font-weight: 470;
+      border-bottom: 1.5px solid #c4d0e2;
+      transition: border 0.15s, color 0.15s;
+    }
+    .link-section a:hover {
+      color: #0b1d3b;
+      border-bottom-color: #0b1d3b;
+    }
+
+    /* FAQ 摘要 — 轻量折叠感 */
+    .faq-mini {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem 2.2rem;
+      border: 1px solid #eef1f6;
+      margin-bottom: 2rem;
+    }
+    .faq-mini h3 {
+      font-size: 1.1rem;
+      font-weight: 520;
+      margin-bottom: 1rem;
+      color: #171b29;
+    }
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+    .faq-item .q {
+      font-weight: 510;
+      color: #1d212f;
+      margin-bottom: 0.2rem;
+    }
+    .faq-item .a {
+      font-size: 0.9rem;
+      color: #494d5a;
+      padding-left: 0.2rem;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #e2e7ee;
+      margin: 1.8rem 0;
+    }
+
+    .footer-note {
+      text-align: left;
+      font-size: 0.85rem;
+      color: #7a7f8c;
+      letter-spacing: 0.02em;
+      border-top: 1px solid #e4e9ef;
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body { padding: 1.2rem 0.8rem; }
+      .hero { padding: 2rem 1.4rem; }
+      .hero h1 { font-size: 2rem; }
+      .card, .link-section, .faq-mini { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 主视觉：留白+资料索引定位 -->
+  <div class="hero">
+    <h1>极速赛车 · 资料整理</h1>
+    <div class="sub">信息索引 · 结构梳理</div>
+    <p>从信息获取与内容组织的角度出发，围绕「极速赛车」这一主题，将分散的资讯整合为可检索、可对照的卡片结构。侧重实用性与条理性，方便快速了解基本轮廓。</p>
+    <span class="tagline">焦点：规则、数据、场景</span>
+  </div>
+
+  <!-- 卡片：用途卡片 + 适合人群 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>用途摘要</h2>
+      <ul>
+        <li>赛事机制与常见术语速查</li>
+        <li>关键数据指标对比（速度、圈时、频率）</li>
+        <li>资料归档：规则变动 / 版本记录</li>
+        <li>辅助分析：统计与趋势参考</li>
+        <li>内容索引：文章、手册、图文汇总</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>适合人群</h2>
+      <ul>
+        <li>资讯研究者 —— 需要结构化信息源</li>
+        <li>爱好者 —— 了解基本规则与发展脉络</li>
+        <li>内容创作者 —— 整理素材与背景资料</li>
+        <li>初学者 —— 快速入门，减少搜索成本</li>
+        <li>资料管理者 —— 希望建立个人知识索引</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 自然链接段落 —— 嵌入极速赛车链接 -->
+  <div class="link-section">
+    <h3>信息索引节点</h3>
+    <p>本页面作为独立资料卡，不对具体结果做预判。若需更完整的规则文档、历史版本或实时数据，可参考 <a href="https://page-jssc.com">极速赛车</a> 整理的信息聚合页。建议将本卡片与主站内容交叉对照，以获取更全面的视角。</p>
+    <p style="margin-top: 0.6rem;">在资料整理时，可依据来源的更新日期、内容颗粒度做分层归档，形成自己的索引体系。</p>
+  </div>
+
+  <!-- FAQ 摘要（轻量版） -->
+  <div class="faq-mini">
+    <h3>常见条目摘要</h3>
+    <div class="faq-item">
+      <div class="q">· 基础规则</div>
+      <div class="a">通常包含发车顺序、计时方式、圈数设定；不同版本间存在细微差异。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">· 数据参考意义</div>
+      <div class="a">圈速、极速、稳定性为三个核心维度，多数资料均围绕这三类展开。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">· 如何筛选有效信息</div>
+      <div class="a">优先关注来源时间、版本号、是否有对比数据，避免单一信源依赖。</div>
+    </div>
+    <div class="faq-item" style="margin-bottom: 0;">
+      <div class="q">· 索引建议</div>
+      <div class="a">按「机制说明 → 数据记录 → 变更日志」建立三级目录，便于回溯。</div>
+    </div>
+  </div>
+
+  <!-- 极简分割 + 结尾 -->
+  <hr>
+  <div class="footer-note">
+    页面内容仅为结构化资料整理，不构成定向建议。信息存在时效性，请以原始来源为准。
+  </div>
+
+</div>
+</body>
+</html>
